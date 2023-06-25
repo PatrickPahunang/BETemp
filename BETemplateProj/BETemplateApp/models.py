@@ -12,7 +12,7 @@ class CustomUser(AbstractUser):
     first_name = models.CharField(max_length=150)
     last_name = models.CharField(max_length=150)
     password = models.CharField(max_length=255)
-    profile_picture = models.ImageField(upload_to='media/', null=True)
+    profile_picture = models.ImageField(upload_to='', null=True)
     groups = models.ManyToManyField(Group, related_name='customuser_set', blank=True)
     user_permissions = models.ManyToManyField(
         Permission, related_name='customuser_set', blank=True

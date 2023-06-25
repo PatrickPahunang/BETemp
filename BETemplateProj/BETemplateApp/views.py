@@ -46,18 +46,21 @@ def update_user(request):
     if request.method == 'POST':
         user_id = request.POST.get('id')
         user = CustomUser.objects.get(id=user_id)
-        print(user)
-        print(request.POST)
-        print(request.FILES)
+        #print(user)
+        #print(request.POST)
+        #print(request.FILES)
         
         try:
             first_name = request.POST.get('first_name')
             last_name = request.POST.get('last_name')
             profile_picture = request.FILES.get('profile_picture')
 
-            if profile_picture:
-                filename = f"{profile_picture.name.split('.')[0]}_{uuid.uuid4().hex}.{profile_picture.name.split('.')[-1]}"
-                user.profile_picture.save(filename, profile_picture, save=False)
+            
+
+            if profile_picture.name != user.profile_picture.name:
+                    # Save the new profile picture
+                    filename = f"{profile_picture.name.split('.')[0]}_{uuid.uuid4().hex}.{profile_picture.name.split('.')[-1]}"
+                    user.profile_picture.save(filename, profile_picture, save=False)
             user.first_name = first_name
             user.last_name = last_name     
             user.save()  # Save the updated user in the database
