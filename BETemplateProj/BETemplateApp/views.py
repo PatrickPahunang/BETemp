@@ -27,7 +27,7 @@ from django.contrib.auth import get_user_model
 # Create your views here.
 
 def landing(request):
-    return HttpResponse('<div style="width:100vw; height:100vh; font-weight:1000; color:green; display:flex; justify-content:center; align-items:center; font-family:helvetica; font-size:20px;">DJANGO Backend Server is UP and RUNNING!<div>')
+    return HttpResponse('<div style="width:100vw; height:100vh; font-weight:1000; color:green; display:flex; justify-content:center; align-items:center; flex-direction:column; text-align:center; font-family:helvetica; font-size:20px;">DJANGO Backend Server of <br> <span style="color:black; font-size:28px;">Company XYZ </span> is UP and RUNNING!<div>')
     
 
 
