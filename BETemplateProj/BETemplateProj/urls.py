@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.shortcuts import render
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #just comment path '' below if you want to DEBUG=TRUE or see the active routes.
+    path('', include('BETemplateApp.urls')),
     path('BETemplateApp/', include('BETemplateApp.urls')),
-    path('auth/', include('djoser.urls')),
-    path('auth/', include('djoser.urls.jwt')), 
     
 ]
 

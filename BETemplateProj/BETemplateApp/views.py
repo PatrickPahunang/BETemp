@@ -27,10 +27,8 @@ from django.contrib.auth import get_user_model
 # Create your views here.
 
 def landing(request):
-    return render(request,'index.html')
+    return HttpResponse('<div style="width:100vw; height:100vh; font-weight:1000; color:green; display:flex; justify-content:center; align-items:center; font-family:helvetica; font-size:20px;">DJANGO Backend Server is UP and RUNNING!<div>')
     
-
-
 
 
 def generate_jwt(user):
