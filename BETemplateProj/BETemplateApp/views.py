@@ -80,7 +80,7 @@ def get_user(request,user_id):
                 'profile_picture': user.profile_picture.url if user.profile_picture else None,
             }
             response = JsonResponse(user_data, status=200)
-            response["Access-Control-Allow-Origin"] = "http://127.0.0.1:3000/"
+            response["Access-Control-Allow-Origin"] = "http://localhost:3000/"
             response["Access-Control-Allow-Methods"] = "GET, DELETE, HEAD, OPTIONS"
             response["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
             return response
