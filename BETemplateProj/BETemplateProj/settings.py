@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',
     'BETemplateApp',
 ]
 
@@ -50,7 +49,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'BETemplateProj.urls'
@@ -136,36 +134,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #    os.path.join(BASE_DIR, 'myappfrontend/build/static')
 #    ]
 
-CORS_ORIGIN_WHITELIST = [
-    'http://127.0.0.1:3000',
-]
-CORS_ALLOW_HEADERS = [
-    'Access-Control-Allow-Origin',
-    'Content-Type',
-    'Authorization',
-    "accept",
-    "user-agent",
-    "x-csrftoken",
-    "x-requested-with",
-]
-
-CORS_ALLOW_ALL = True
-
-CORS_ALLOWED_ORIGINS = [
-    'http://127.0.0.1:3000',
-    'http://localhost:3000',
-    # Add any other allowed origins here
-]
-
-CORS_ALLOW_METHODS = [
-    "DELETE",
-    "GET",
-    "OPTIONS",
-    "PATCH",
-    "POST",
-    "PUT",
-    # Add any other allowed methods here
-]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
